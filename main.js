@@ -6,10 +6,8 @@ var typed = new Typed(".typewriter-text ", {
     "Designer",
 
     "Freelancer",
-
-    "Travel Blogger",
-
-    " Youtuber",
+    
+    
   ],
   typeSpeed: 100,
   backSpeed: 60,
@@ -23,7 +21,7 @@ let section = document.querySelectorAll('.section');
 let navLinks = document.querySelectorAll('.header nav a');
 
 window.onscroll = () => {
-    sections.forEach(sec => {
+    section.forEach(sec => {
         let top = window.scrollY;
         let offset = window.offsetTop - 150;
         let height = window.offsetHeight;
@@ -45,3 +43,9 @@ menuIcon.onclick = () => {
 }
 
 
+document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+      navbar.classList.remove('active');
+      menuIcon.classList.remove('bx-x');
+    }
+  });
